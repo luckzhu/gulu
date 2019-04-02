@@ -8,29 +8,41 @@
     <title>造轱辘</title>
     <style>
         *{
-            margin: 0px;
-            padding: 0px;
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
         :root{
             --font-size: 14px;
+            --color: #333;
             --button-height: 32px;
-            --padding: 0 1em;
             --border-radius: 4px;
             --border-color: #999;
             --button-bg: white;
-            --color: #333;
+            --border-hover-color: #666;
+            --border-active-bg: #eee;
+            font-family: PingFangSC-Regular;
+        }
+    </style>
+    <style type="text/css">
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
 <div id="app">
-    <g-button>你好</g-button>
-    <g-button>hello</g-button>
+    <g-button icon="setting" icon-position="right"  >你好</g-button>
+    <g-button icon="setting" icon-position="left"  >你好</g-button>
+
 </div>
 <script src="./src/app.js"></script>
-
+<script src="//at.alicdn.com/t/font_1121624_7nz07jp8koy.js"></script>
 
 </body>
 </html>
