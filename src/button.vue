@@ -1,7 +1,8 @@
 <template>
 
-        <button class="g-button" v-bind:class="{[iconPosition]:true}" >
-            <g-icon v-if="icon" v-bind:name="icon"></g-icon>
+        <button class="g-button" v-bind:class="{[iconPosition]:true}" v-on:click="x">
+            <g-icon v-if="loading" class="loading" name="loading"></g-icon>
+            <g-icon v-if="icon && !loading" v-bind:name="icon"></g-icon>
             <div class="content">
                 <slot></slot>
             </div>
@@ -19,12 +20,32 @@
                 validator(value) {
                     return !(value !== 'left' && value !== 'right');
                 }
+            },
+            loading: {
+                type: Boolean,
+                default: false,
+            }
+        },
+        methods: {
+            x(){
+                this.$emit('click')
             }
         }
+
+
     }
 </script>
 
 <style lang="scss">
+    @keyframes loadingRotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+           }
+    }
+
     .g-button {
         font-size: var(--font-size);
         color: var(--color);
@@ -39,6 +60,10 @@
         display: inline-flex;
         justify-content: center;
         align-items: center;
+
+        >.loading {
+            animation: loadingRotation 2s linear infinite;
+        }
 
         &.left {
             >.g-icon {order: 1; margin-left: 0; margin-right: .4em;}
