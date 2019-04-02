@@ -20,7 +20,7 @@
             --border-radius: 4px;
             --border-color: #999;
             --button-bg: white;
-            --border-hover-color: #666;
+            --border-hover-color: red;
             --border-active-bg: #eee;
             font-family: PingFangSC-Regular;
         }
@@ -29,8 +29,16 @@
 </head>
 <body>
 <div id="app">
+    <g-button  :loading = "loading1" v-on:click="loading1 = !loading1" >你好</g-button>
     <g-button icon="left" icon-position="right" :loading = "loading1" v-on:click="loading1 = !loading1" >你好</g-button>
     <g-button icon="setting" icon-position="left" :loading = "loading2" v-on:click="loading2 = !loading2">你好</g-button>
+
+    <g-button-group>
+        <g-button icon="left" >上一页</g-button>
+        <g-button>更多</g-button>
+        <g-button icon="right" icon-position="right">下一页</g-button>
+    </g-button-group>
+
 
 </div>
 <script src="./src/app.js"></script>
