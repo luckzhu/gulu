@@ -1,9 +1,7 @@
 <template>
 
         <button class="g-button" v-bind:class="{[iconPosition]:true}" >
-            <svg v-if="icon" class="icon" >
-                <use v-bind:xlink:href="`#icon-${icon}`"></use>
-            </svg>
+            <g-icon v-if="icon" v-bind:name="icon"></g-icon>
             <div class="content">
                 <slot></slot>
             </div>
@@ -13,7 +11,16 @@
 
 <script>
     export default {
-        props: ['icon','iconPosition']
+        props: {
+            icon: {},
+            iconPosition: {
+                type: String,
+                default: 'left',
+                validator(value) {
+                    return !(value !== 'left' && value !== 'right');
+                }
+            }
+        }
     }
 </script>
 
@@ -34,15 +41,14 @@
         align-items: center;
 
         &.left {
-            >.icon {order: 1; margin-left: 0; margin-right: .4em;}
+            >.g-icon {order: 1; margin-left: 0; margin-right: .4em;}
             >.content {order: 2;}
         }
 
         &.right {
-            >.icon {order: 2; margin-left: .4em; margin-right: 0;}
+            >.g-icon {order: 2; margin-left: .4em; margin-right: 0;}
             >.content {order: 1;}
         }
-
 
         &:hover {border: 1px solid var(--border-hover-color);}
         &:active {background: var(--border-active-bg);}
