@@ -5,12 +5,11 @@
 </template>
 
 <script>
-    import 'svg'
+    import './svg'
     export default {
         props: {
             name: {},
         }
-
     }
 </script>
 
