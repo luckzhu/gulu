@@ -1,10 +1,14 @@
 <template>
     <div class="wrapper" v-bind:class="{'error': error}">
         <input type="text" v-bind:value="value" v-bind:disabled="disabled" v-bind:readonly="readonly"
+            v-on:change="$emit('change',$event.target.value)"
+            v-on:focus="$emit('focus',$event.target.value)"
+            v-on:blur="$emit('blur',$event.target.value)"
+            v-on:input="$emit('input',$event.target.value)"
         >
         <template v-if="error">
             <g-icon name="error"></g-icon>
-            <span>{{error}}</span>
+            <span class="errorMessage">{{error}}</span>
         </template>
 
     </div>
@@ -84,6 +88,12 @@
                 border-color: $red;
             }
 
+
+        }
+        > svg {
+            fill: $red;
+        }
+        > .errorMessage {
             color: $red;
         }
     }

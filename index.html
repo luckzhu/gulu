@@ -42,6 +42,12 @@
     <div class="box">
         <g-input value="王" error="姓名不能少于两个字"></g-input>
     </div>
+
+    <div class="box">
+        <g-input v-model="message" ></g-input>
+        <span>{{message}}</span>
+    </div>
+
     <div class="box">
         <g-button :loading="loading1" v-on:click="loading1 = !loading1">你好</g-button>
         <g-button icon="left" icon-position="right" :loading="loading2" v-on:click="loading2 = !loading2">你好</g-button>

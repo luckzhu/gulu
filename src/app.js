@@ -16,6 +16,12 @@ new Vue({
         loading1: false,
         loading2: false,
         loading3: false,
+        message: '双绑'
+    },
+    methods: {
+        inputchange: function (e) {
+            console.log(e.target.value)
+        }
     }
 })
 
