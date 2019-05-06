@@ -33,6 +33,49 @@
 </head>
 <body>
 <div id="app">
+
+    <g-row :gutter="40">
+        <g-col :span="2">2</g-col>
+        <g-col :span="22">22</g-col>
+    </g-row>
+    <g-row :gutter="40">
+        <g-col :span="12">12</g-col>
+        <g-col :span="12">12</g-col>
+    </g-row>
+    <g-row :gutter="40">
+        <g-col :span="8">8</g-col>
+        <g-col :span="8">8</g-col>
+        <g-col :span="8">8</g-col>
+    </g-row>
+    <g-row :gutter="40">
+        <g-col >1</g-col>
+        <g-col >1</g-col>
+        <g-col >1</g-col>
+    </g-row>
+    <g-row :gutter="40">
+        <g-col :span="3">1</g-col>
+        <g-col :span="6">2</g-col>
+        <g-col :span="15">3</g-col>
+    </g-row>
+
+    <g-row :gutter="40">
+        <g-col :span="10" >
+            <g-row :align="'right'">
+                <g-col>1</g-col>
+                <g-col>2</g-col>
+                <g-col>3</g-col>
+                <g-col>4</g-col>
+                <g-col>5</g-col>
+            </g-row>
+        </g-col>
+        <g-col :span="14">222</g-col>
+    </g-row>
+
+
+
+
+
+
     <div class="box">
         <g-input value="张三"></g-input>
         <g-input value="李四" v-bind:disabled="true"></g-input>
